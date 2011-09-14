@@ -28,6 +28,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             'cntcto' => new Zend_Controller_Router_Route(
                 'contact-us',
                 array(
+                    'module' => 'temas',
                     'controller' => 'index',
                     'action' => 'contacto'
                 )
