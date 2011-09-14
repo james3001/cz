@@ -1,19 +1,38 @@
-2011-09-14T01:41:55+00:00 INFO (6): Entraron a Contacto
-2011-09-14T01:41:55+00:00 DEBUG (7): Entraron a Contacto DBG
-2011-09-14T01:44:49+00:00 ERR (3): IndexController|IndexController::contactoAction39Entraron a Contacto
-2011-09-14T01:44:49+00:00 DEBUG (7): Entraron a Contacto DBG
-2011-09-14T01:54:32+00:00 ERR (3): IndexController|IndexController::contactoAction38Entraron a Contacto
-2011-09-14T01:54:32+00:00 DEBUG (7): Entraron a Contacto DBG
-2011-09-14T01:54:45+00:00 ERR (3): IndexController|IndexController::contactoAction38Entraron a Contacto
-2011-09-14T01:54:45+00:00 DEBUG (7): Entraron a Contacto DBG
-2011-09-14T01:56:48+00:00 ERR (3): IndexController|IndexController::contactoAction38Entraron a Contacto
-2011-09-14T01:56:48+00:00 DEBUG (7): Entraron a Contacto DBG
-2011-09-14T01:57:03+00:00 ERR (3): IndexController|IndexController::contactoAction38Entraron a Contacto
-2011-09-14T01:57:03+00:00 DEBUG (7): Entraron a Contacto DBG
-
+2011-09-14T02:35:58+00:00 CRIT (2): Entraron a Contacto
+2011-09-14T02:35:58+00:00 DEBUG (7): Entraron a Contacto DBG
+2011-09-14T02:36:00+00:00 CRIT (2): Entraron a Contacto
+2011-09-14T02:36:00+00:00 DEBUG (7): Entraron a Contacto DBG
+2011-09-14T02:36:00+00:00 CRIT (2): Entraron a Contacto
+2011-09-14T02:36:00+00:00 DEBUG (7): Entraron a Contacto DBG
 -----------
-2011-09-14T02:22:52+00:00 CRIT (2): Entraron a Contacto
-2011-09-14T02:22:54+00:00 CRIT (2): Entraron a Contacto
-2011-09-14T02:22:55+00:00 CRIT (2): Entraron a Contacto
-2011-09-14T02:22:57+00:00 CRIT (2): Entraron a Contacto
-2011-09-14T02:23:00+00:00 CRIT (2): Entraron a Contacto
+2011-09-14T02:36:22+00:00 CRIT (2): Entraron a Contacto
+2011-09-14T02:36:23+00:00 CRIT (2): Entraron a Contacto
+2011-09-14T02:36:23+00:00 CRIT (2): Entraron a Contacto
+2011-09-14T02:41:06+00:00 CRIT (2): Entraron a Contacto (Firebug) 
+2011-09-14T02:41:19+00:00 CRIT (2): Entraron a Contacto (Firebug) 
+2011-09-14T02:41:20+00:00 CRIT (2): Entraron a Contacto (Firebug) 
+2011-09-14T02:41:21+00:00 CRIT (2): Entraron a Contacto (Firebug) 
+2011-09-14T02:41:48+00:00 CRIT (2): Entraron a Contacto (Firebug) 
+2011-09-14T02:42:02+00:00 CRIT (2): Entraron a Contacto (Firebug) 
+2011-09-14T02:43:03+00:00 DEBUG (7): development
+2011-09-14T02:43:03+00:00 CRIT (2): Entraron a Contacto (Firebug) 
+2011-09-14T02:43:03+00:00 DEBUG (7): Entraron a Contacto DBG
+2011-09-14T02:44:37+00:00 EMERG (0): emerg
+2011-09-14T02:44:37+00:00 ALERT (1): alert
+2011-09-14T02:44:37+00:00 CRIT (2): crit
+2011-09-14T02:44:37+00:00 ERR (3): crit
+2011-09-14T02:44:37+00:00 WARN (4): warn
+2011-09-14T02:44:37+00:00 NOTICE (5): not
+2011-09-14T02:44:37+00:00 INFO (6): info
+2011-09-14T02:44:37+00:00 DEBUG (7): debug
+2011-09-14T02:44:47+00:00 EMERG (0): emerg
+2011-09-14T02:44:47+00:00 ALERT (1): alert
+2011-09-14T02:44:47+00:00 CRIT (2): crit
+2011-09-14T02:44:47+00:00 ERR (3): err
+2011-09-14T02:44:47+00:00 WARN (4): warn
+2011-09-14T02:44:47+00:00 NOTICE (5): not
+2011-09-14T02:44:47+00:00 INFO (6): info
+2011-09-14T02:44:47+00:00 DEBUG (7): debug
+2011-09-14T02:45:53+00:00 DEBUG (7): array
+2011-09-14T02:46:15+00:00 DEBUG (7): array
+2011-09-14T02:46:15+00:00 DEBUG (7): object
