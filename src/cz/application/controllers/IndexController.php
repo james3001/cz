@@ -31,11 +31,12 @@ class IndexController extends Zend_Controller_Action
         // config del logger
         $logger = new Zend_Log();
         $writer = new Zend_Log_Writer_Stream(APPLICATION_PATH."/../logs/application.log");
-        //$log->addPriority($name, $priority);
+        $filter = new Zend_Log_Filter_Priority(Zend_log::ERR);
+        $logger->addFilter($filter);
         $logger->addWriter($writer);
         
         // uso
-        $logger->log( __CLASS__ ."|". __METHOD__ . __LINE__ . "Entraron a Contacto", Zend_Log::ERR );
+        $logger->log("Entraron a Contacto", Zend_Log::CRIT );
         $logger->debug("Entraron a Contacto DBG");
         
         
