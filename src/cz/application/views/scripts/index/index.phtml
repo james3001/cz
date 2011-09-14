@@ -1,3 +1,10 @@
 <h2>Homepage</h2>
 
-<a href="<?=$this->url(array('action'=>'contacto'))?>">Contacto</a>
+<a href="<?=$this->url(array(),'cntcto',true)?>">Contacto</a>
+
+
+<? if (count($this->mensajes)) :?>
+    <? foreach($this->mensajes as $msj): ?>
+        <span><?=$msj?></span>
+    <? endforeach; ?>
+<? endif ;?>

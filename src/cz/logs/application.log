@@ -1,0 +1,12 @@
+2011-09-14T01:41:55+00:00 INFO (6): Entraron a Contacto
+2011-09-14T01:41:55+00:00 DEBUG (7): Entraron a Contacto DBG
+2011-09-14T01:44:49+00:00 ERR (3): IndexController|IndexController::contactoAction39Entraron a Contacto
+2011-09-14T01:44:49+00:00 DEBUG (7): Entraron a Contacto DBG
+2011-09-14T01:54:32+00:00 ERR (3): IndexController|IndexController::contactoAction38Entraron a Contacto
+2011-09-14T01:54:32+00:00 DEBUG (7): Entraron a Contacto DBG
+2011-09-14T01:54:45+00:00 ERR (3): IndexController|IndexController::contactoAction38Entraron a Contacto
+2011-09-14T01:54:45+00:00 DEBUG (7): Entraron a Contacto DBG
+2011-09-14T01:56:48+00:00 ERR (3): IndexController|IndexController::contactoAction38Entraron a Contacto
+2011-09-14T01:56:48+00:00 DEBUG (7): Entraron a Contacto DBG
+2011-09-14T01:57:03+00:00 ERR (3): IndexController|IndexController::contactoAction38Entraron a Contacto
+2011-09-14T01:57:03+00:00 DEBUG (7): Entraron a Contacto DBG
