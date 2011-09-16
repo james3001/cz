@@ -1,1 +1,14 @@
 <h2>Categorias:</h2>
+
+
+<ul>
+    <? foreach($this->categorias as $cat): ?>
+        <li<?=$cat->activo==0?' class="inactivo"':''?>><?=$cat->nombre?></li>
+    <? endforeach; ?>
+</ul>
+
+<style type="text/css">
+    .inactivo{text-decoration: line-through;}
+    
+</style>
+    
