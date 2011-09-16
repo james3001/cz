@@ -1,4 +1,13 @@
 <h2>Producto</h2>
 
 
-<?=$this->form?>
+<?//=$this->form?>
+
+
+<hr>
+
+<ul>
+    <? foreach($this->productos as $categoria): ?>
+        <li><?=$categoria['producto']?></li>
+    <? endforeach; ?>
+</ul>
