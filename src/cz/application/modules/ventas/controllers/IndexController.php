@@ -10,6 +10,8 @@ class Ventas_IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
+//        $cuadrado = new App_Formas_Cuadrado();
+//        echo $cuadrado->imprimir(6);
     }
 
 }
