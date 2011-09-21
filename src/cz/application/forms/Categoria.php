@@ -29,7 +29,16 @@ class Application_Form_Categoria extends Zend_Form
         $e->setLabel('Enviar');
         $this->addElement($e);
         
-        
+    }
+    
+    
+    public function parametrosNombrados(){
+        $db = $_categoria->getAdapter();
+        $db = Zend_Db_Table::getDefaultAdapter();
+        $sql = "SELECT * FROM categoria WHERE id > :id_min AND id < :id_max ";
+        $stmt = $db->query($sql,array(':id_min'=>2,':id_max'=>4));
+        echo get_class($stmt);        
+        var_dump($stmt->fetchAll());
     }
     
 }

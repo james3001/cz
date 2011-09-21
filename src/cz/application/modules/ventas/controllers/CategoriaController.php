@@ -17,7 +17,8 @@ class Ventas_CategoriaController extends Zend_Controller_Action
         $paginator = $this->_categoria->getPaginator();
         $paginator->setCurrentPageNumber($this->_getParam('page',1));
         $this->view->categorias = $paginator;
-        
+        $sess = new Zend_Session_Namespace('ventas');
+        $this->view->catErrada = $sess->catErrada;
     }
 
     public function nuevoAction()
@@ -28,11 +29,16 @@ class Ventas_CategoriaController extends Zend_Controller_Action
             $params = $this->_getAllParams();
             $isValid = $form->isValid($params);
             if($isValid){
-                
                 $this->_categoria->insert($form->getValues());
                 $this->_helper->flashMessenger('Se insertó correctamente');
                 $this->_redirect('/ventas/categoria');
+            }else{
+                $sess = new Zend_Session_Namespace('ventas');
+                $sess->catErrada = $this->_getParam('nombre');
+                $sess->setExpirationSeconds(30,'catErrada');
+                $sess->setExpirationHops(4, 'catErrada');
             }
+            
         }
         $this->view->form = $form;
         

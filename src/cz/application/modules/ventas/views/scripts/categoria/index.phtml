@@ -1,8 +1,10 @@
 <h2>Categorias:</h2>
 
-<? foreach($this->mensajes as $categoria): ?>
-        <li><?=$categoria?></li>
+<? foreach($this->mensajes as $producto): ?>
+        <li><?=$producto?></li>
 <? endforeach; ?>
+        
+        Último Error: <?=$this->catErrada?>;
 
 <a href="<?=$this->url(array('module'=>'ventas','controller'=>'categoria','action'=>'nuevo'),'default',true)?>">Nuevo</a>
 <br />
@@ -17,16 +19,16 @@
         </tr>
     </thead>
     <tbody>
-        <? foreach($this->categorias as $categoria): ?>
-        <tr class="<?=$categoria['activo']?'':'in'?>activo">
-            <td><?=$categoria['nombre']?></td>
-            <td><?=$categoria['descripcion']==''?'&nbsp;':$categoria['descripcion']?></td>
+        <? foreach($this->categorias as $producto): ?>
+        <tr class="<?=$producto['activo']?'':'in'?>activo">
+            <td><?=$producto['nombre']?></td>
+            <td><?=$producto['descripcion']==''?'&nbsp;':$producto['descripcion']?></td>
             <td>
-                <a href="<?=$this->url(array('module'=>'ventas','controller'=>'categoria','action'=>'editar','id'=>$categoria['id']),'default',true)?>">Editar</a>
-                <? if( (bool) $categoria['activo'] ): ?>
-                    <a href="<?=$this->url(array('module'=>'ventas','controller'=>'categoria','action'=>'desactivar','id'=>$categoria['id']),'default',true)?>">Desactivar</a>
+                <a href="<?=$this->url(array('module'=>'ventas','controller'=>'categoria','action'=>'editar','id'=>$producto['id']),'default',true)?>">Editar</a>
+                <? if( (bool) $producto['activo'] ): ?>
+                    <a href="<?=$this->url(array('module'=>'ventas','controller'=>'categoria','action'=>'desactivar','id'=>$producto['id']),'default',true)?>">Desactivar</a>
                 <? else: ?>
-                    <a href="<?=$this->url(array('module'=>'ventas','controller'=>'categoria','action'=>'activar','id'=>$categoria['id']),'default',true)?>">Activar</a>
+                    <a href="<?=$this->url(array('module'=>'ventas','controller'=>'categoria','action'=>'activar','id'=>$producto['id']),'default',true)?>">Activar</a>
                 <? endif; ?>
                 
             </td>

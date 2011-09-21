@@ -7,7 +7,20 @@
 <hr>
 
 <ul>
-    <? foreach($this->productos as $categoria): ?>
-        <li><?=$categoria['producto']?></li>
+    <? foreach($this->productos as $producto): ?>
+        <li><?=$producto['nombre']?></li>
     <? endforeach; ?>
 </ul>
+
+
+<div class="pagination all">
+    <?=$this->paginationControl($this->productos, 'Sliding' ,'producto/_pag.phtml')?>
+</div>
+
+<style type="text/css">
+    .pagUl .itemPag{
+        float: left;
+        width: 60px;
+        list-style: none;
+    }
+</style>

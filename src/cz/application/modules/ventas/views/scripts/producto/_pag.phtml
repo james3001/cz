@@ -1,0 +1,44 @@
+<div class="paginador all">
+    <?php if ($this->pageCount) { ?>
+        <ul class="pagUl all theta alignR right">
+            <?php
+            if (isset($this->previous)) {
+                $params = array('page' => $this->first);
+                echo '<li class="itemPag firstNextP">« <a class="linkPag firstP" href="' . $this->url($params) . '#anclaPag">Primero</a></li>';
+            }
+
+            if (isset($this->previous)) {
+                $params = array('page' => $this->previous);
+                echo '<li class="itemPag"><a class="linkPag first" href="' . $this->url($params) . '#anclaPag">Anterior</a></li>';
+            }
+            ?>
+
+            <? foreach ($this->pagesInRange as $page): ?>
+                <? if ($page != $this->current): ?>
+                    <li class="itemPag"><a href="<?= $this->url(array('page' => $page)); ?>#anclaPag"><?= $page; ?></a></li>
+                    <?= $this->last == $page ? '' : '' ?>
+                <? else: ?>
+                    <li class="itemPag"><a class="linkPag active"><?= $page; ?> <?= $this->last == $page ? '' : '' ?></a></li>
+                <? endif; ?>
+            <? endforeach; ?>
+
+            <?
+            if (isset($this->next)) {
+                $params = array('page' => $this->next);
+                echo '<li class="itemPag"><a class="linkPag next" href="' . $this->url($params) . '#anclaPag">Siguiente</a></li>';
+            }
+
+            if (isset($this->next)) {
+                $params = array('page' => $this->last);
+                echo '<li class="itemPag lastNext"><a class="linkPag nextLastP" href="' . $this->url($params) . '#anclaPag">Último</a> »</li>';
+            }
+            ?>
+        </ul>
+    <?php
+    } else {
+    		echo '<div class="paginador all">';
+        echo "<div class='pagUl grid8 theta alignC'> - No hay Postulaciones registradas </div>";
+				echo '</div>';
+    }
+    ?>
+</div>

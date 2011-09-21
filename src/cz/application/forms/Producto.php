@@ -11,7 +11,6 @@ class Application_Form_Producto extends Zend_Form
         $fabValues = $_fabricante->getFabricanteCbo();
         
         
-        
         parent::init();
         
         $e = new Zend_Form_Element_Select('id_categoria');

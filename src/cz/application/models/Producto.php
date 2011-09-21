@@ -4,7 +4,19 @@ class Application_Model_Producto extends Zend_Db_Table {
     
     protected $_name = 'producto';
     
-    public function getProductosYCategorias(){
+    public function getAllProductos() {
+        return $this->getAdapter()->select()->from($this->_name);
+        //return $this->fetchAll();
+    }
+    
+    public function getPaginator(){
+        $paginador = Zend_Paginator::factory($this->getAllProductos());
+        $paginador->setItemCountPerPage(2);
+        //$pag->setRowCount(500);
+        return $paginador;
+    }
+
+    /*public function getProductosYCategorias(){
         $db = $this->getAdapter();
         $db = Zend_Db_Table::getDefaultAdapter();
         $sql = $db->select()
@@ -31,5 +43,5 @@ class Application_Model_Producto extends Zend_Db_Table {
 //        return $db->fetchCol($sql);
 //        return $db->fetchOne($sql);
 //        return $db->fetchPairs($sql);
-    }
+    }*/
 }

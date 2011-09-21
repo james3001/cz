@@ -36,7 +36,10 @@ class Ventas_ProductoController extends Zend_Controller_Action {
                 //
             }
         }
-        $this->view->productos = $this->_producto->getProductosYCategorias();
+        
+        $paginador = $this->_producto->getPaginator();
+        $paginador->setCurrentPageNumber($this->_getParam('page',1));
+        $this->view->productos = $paginador;
         
         $this->view->form = $form;
         
