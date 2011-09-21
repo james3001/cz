@@ -12,6 +12,7 @@ class Application_Form_Categoria extends Zend_Form
         $e->setRequired(true);
         $v = new Zend_Validate_StringLength(array('min' => 3, 'max' => 30));
         $e->addValidator($v);
+        $e->addValidator(new App_Validate_NoEquals('aoc'));
         $e->addFilter(new Zend_Filter_StringTrim());
         $e->addFilter(new Zend_Filter_StringToLower());
         $e->setLabel('Nombre');
@@ -23,6 +24,9 @@ class Application_Form_Categoria extends Zend_Form
         $e->setAttrib('rows', 3);
         $v = new Zend_Validate_StringLength(array('min' => 3, 'max' => 180));
         $e->addValidator($v);
+        $v = new App_Validate_PasswordConfirmation();
+        $v->setMatchField('nombre');
+        //$e->addValidator($v);
         $this->addElement($e);
         
         $e = new Zend_Form_Element_Submit('submit');
