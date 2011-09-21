@@ -5,7 +5,7 @@
  *
  * @author eanaya
  */
-class Util
+class App_Util
 {
     private $_dniTorucFixedValues = array(5,4,3,2,7,6,5,4,3,2);
     
