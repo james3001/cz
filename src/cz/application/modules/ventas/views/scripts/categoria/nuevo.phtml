@@ -5,3 +5,40 @@
 <br />
 
 <?=$this->form?>
+
+<script type="text/javascript">
+    //$();
+    
+    
+    $('#nombre').blur( function(){
+        $.ajax( {
+            'url' : '/ventas/categoria/valida-categoria',
+            'type' : 'get',
+            'data' : {
+                'nombre':$(this).val()
+            },
+            'success' : function(response){
+                console.log(response);
+                var $box = $('#nombre').parent();
+                $box.find('.msgajx').remove();
+                if(response.status=='OK'){
+                    $box.append('<span class="msgajx">todo OK</span>');
+                }else{
+                    $box.append('<span class="msgajx">ERROR</span>');
+                }
+            },
+            'dataType' : 'json'
+        });
+    });
+    
+
+    
+    
+    
+</script>
+
+<style>
+    #nombre{
+        border: 1px green dashed;
+    }
+</style>

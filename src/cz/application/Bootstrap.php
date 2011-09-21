@@ -13,6 +13,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->headTitle()->setSeparator(' | ');
         $view->headMeta()->appendName('keywords','zend, curso zend, zend framework');
         $view->headLink()->appendStylesheet('/css/global.css');
+        $view->headScript()->appendFile('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js','text/javascript');
         $view->headScript()->appendFile('/js/global.js','text/javascript');
         $view->headScript()->appendFile(
                 '/js/fixie.js',
