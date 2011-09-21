@@ -13,7 +13,10 @@ class Ventas_CategoriaController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $this->view->categorias = $this->_categoria->getCategorias();
+        //$this->view->categorias = $this->_categoria->getCategorias();
+        $paginator = $this->_categoria->getPaginator();
+        $paginator->setCurrentPageNumber($this->_getParam('page',1));
+        $this->view->categorias = $paginator;
         
     }
 

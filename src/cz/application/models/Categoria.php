@@ -13,6 +13,14 @@ class Application_Model_Categoria extends Zend_Db_Table {
         return $this->fetchAll(/*$where*/);
         
     }
+
+    public function getPaginator() {
+        $paginator = Zend_Paginator::factory($this->getCategorias());
+        $paginator->setItemCountPerPage(2);
+        return $paginator;
+    }
+
+
     public function getCategoriasCbo(){
         $db = $this->getAdapter();
         return $db->fetchPairs($this->select()->where('activo = ?', 1));
