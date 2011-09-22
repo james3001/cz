@@ -62,6 +62,64 @@ class Ventas_ProductoController extends Zend_Controller_Action {
         $this->view->form = $form;
     }
     
+    
+    public function verPdfAction()
+    {
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
+
+
+        $producto = $this->_producto->getDetalle($this->_getParam('id'));
+//        var_dump($producto);exit;
+
+        $pdf = new Zend_Pdf();
+        $pdf1 = Zend_Pdf::load(APPLICATION_PATH . '/../templates/producto.pdf');
+
+//        $page = $pdf->newPage(Zend_Pdf_Page::SIZE_A4); // 595 x842
+        $font = Zend_Pdf_Font::fontWithName(Zend_Pdf_Font::FONT_HELVETICA);
+//        $pdf->pages[] = $page;
+//        $page->setFont($font, 20);$page->drawText('Zend: PDF', 10, 822);
+//        $page->setFont($font, 12);$page->drawText('Comentarios', 10, 802);
+//        $pdfData = $pdf->render();
+
+        $page = $pdf1->pages[0];
+        $page->setFont($font, 12);
+        $page->drawText($producto['producto'], 116, 639);
+        $page->drawText($producto['precio'], 116, 607);
+        $page->drawText($producto['categoria'], 116, 575);
+        $page->drawText($producto['fabricante'], 116, 543);
+        $page->drawText('zEND', 200, 200);
+        $pdfData = $pdf1->render();
+
+
+
+        header("Content-type: application/x-pdf");
+        header("Content-Disposition: inline; filename=result.pdf");
+        $this->_response->appendBody($pdfData);
+
+    }        
+    
+    public function verAction(){
+        $this->view->producto = $this->_producto->getDetalle($this->_getParam('id'));
+    }
+    
+    public function verDomPdfAction(){
+        
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender();
+        $id = $this->_request->getParam('id');
+        $this->view->producto = $this->_producto->getDetalle($id);
+        $html = $this->view->render('producto/ver.phtml');
+        
+        require_once(APPLICATION_PATH . "/../library/Dompdf/dompdf_config.inc.php");
+        
+        $pdf = new DOMPDF();
+        $pdf->set_paper('8.5x11','portrait');
+        $pdf->load_html($html);
+        $pdf->render();
+        $pdf->stream('report.pdf'); //->output()
+        
+    }
+    
 }
 
-?>

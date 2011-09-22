@@ -18,6 +18,8 @@ class Ventas_CategoriaController extends Zend_Controller_Action {
         $sess = new Zend_Session_Namespace('ventas');
         $this->view->catErrada = $sess->catErrada;
     }
+    
+    
 
     // ajax endpoint
     public function validaCategoriaAction() {

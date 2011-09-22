@@ -37,6 +37,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                     'action' => 'contacto'
                 )
             ),
+            'slugfab' => new Zend_Controller_Router_Route(
+                'fab/:slug',
+                array(
+                    'module' => 'ventas',
+                    'controller' => 'fabricante',
+                    'action' => 'ver',
+                    'slug'=>':slug'
+                )
+            ),
             'ver-post' => new Zend_Controller_Router_Route(
                 'post/:id-:slug',
                 array(

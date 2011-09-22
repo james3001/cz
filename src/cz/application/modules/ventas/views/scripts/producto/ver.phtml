@@ -1,0 +1,28 @@
+<h2>Producto</h2>
+
+<?var_dump($this->producto);?>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <td><?=$this->producto['id_producto']?></td>
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <td><?=$this->producto['producto']?></td>
+    </tr>
+    <tr>
+        <th>precio</th>
+        <td><?=$this->producto['precio']?></td>
+    </tr>
+    <tr>
+        <th>categoria</th>
+        <td><?=$this->producto['categoria']?></td>
+    </tr>
+    <tr>
+        <th>categoria</th>
+        <td><?=$this->producto['categoria']?></td>
+    </tr>
+</table>
+
+<a href="<?=$this->url(array('action'=>'index','controller'=>'producto','module'=>'ventas'),'default',true)?>">Listado</a>

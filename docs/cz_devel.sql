@@ -61,6 +61,8 @@ INSERT INTO `categoria` (`id`, `nombre`, `descripcion`, `activo`) VALUES
 CREATE TABLE IF NOT EXISTS `fabricante` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
+  `ruc` varchar(50) NOT NULL,
+  `slug` varchar(50) NOT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;

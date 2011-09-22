@@ -1,0 +1,24 @@
+<h2>Editar Categoría</h2>
+
+<?var_dump($this->fabricante);?>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <td><?=$this->fabricante['id']?></td>
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <td><?=$this->fabricante['nombre']?></td>
+    </tr>
+    <tr>
+        <th>RUC</th>
+        <td><?=$this->fabricante['ruc']?></td>
+    </tr>
+    <tr>
+        <th>Activo?</th>
+        <td><?=$this->fabricante['activo']?></td>
+    </tr>
+</table>
+
+<a href="<?=$this->url(array('action'=>'index','controller'=>'fabricante','module'=>'ventas'),'default',true)?>">Listado</a>
