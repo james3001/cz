@@ -1,0 +1,27 @@
+<?php echo $this->doctype() ?>
+<html>
+    <head>
+        <?= $this->headTitle() ?>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?= $this->headMeta() ?>
+        <?= $this->headLink() ?>
+        <?= $this->headScript() ?>
+    </head>
+    <body id="temas">
+        <div id="cabecera" class="<?= $this->isAuth ? 'rol-' . $this->authData['usuario']->rol : '' ?>">
+            <h1>Temas</h1>
+            <div id="esquina">
+                [
+                <a href="<?=$this->url(array('controller'=>'ventas'),'default',true)?>">Ventas</a> |
+                <a href="<?=$this->url(array('controller'=>'temas'),'default',true)?>">Temas</a>
+                ]
+            </div>
+        </div>
+        <div id="contenido">
+            <?= $this->layout()->content ?>
+        </div>
+        <div id="pie">
+            <span>Desarrollo de Aplicaciones web con Zend Framework</span><br />
+        </div>
+    </body>
+</html>

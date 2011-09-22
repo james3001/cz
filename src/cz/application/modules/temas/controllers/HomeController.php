@@ -5,10 +5,19 @@ class Temas_HomeController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
+        $this->_helper->layout->setLayout('temas');
     }
 
-    public function indexAction()
+    public function indexAction(){
+
+    }
+
+
+
+
+
+    
+    public function flashMessengerAction()
     {
         $fm = $this->_helper->flashMessenger;
         $this->view->mensajes = $fm->getMessages();

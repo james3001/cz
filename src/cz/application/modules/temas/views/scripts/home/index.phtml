@@ -1,10 +1,25 @@
-<h2>MODULO: Temas</h2>
+<ul>
 
-<a href="<?=$this->url(array(),'cntcto',true)?>">Contacto</a>
+    <!--  -->
+    <li>
+        <a>Zend_Config_Ini</a>
+        <ul>
+            <li><a href="#">Leyendo parámetros</a></li>
+        </ul>
+    </li>
 
+    
+    <!--  -->
+    <li>
+        <a>Zend_Log</a>
+        <ul>
+            <li><a href="#">Archivo</a></li>
+            <li><a href="#">Consola</a></li>
+            <li><a href="#">Firebug</a></li>
+            <li><a href="#">Prioridades</a></li>
+            <li><a href="#">Filtros</a></li>
+        </ul>
+    </li>
 
-<? if (count($this->mensajes)) :?>
-    <? foreach($this->mensajes as $msj): ?>
-        <span><?=$msj?></span>
-    <? endforeach; ?>
-<? endif ;?>
+    
+</ul>

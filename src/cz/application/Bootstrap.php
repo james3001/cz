@@ -4,7 +4,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
     
     public function _initView() {
-        
+
+        $doctypeHelper = new Zend_View_Helper_Doctype();
+        $doctypeHelper->doctype(Zend_View_Helper_Doctype::XHTML1_STRICT);
+
         $this->bootstrap('layout');
         $layout = $this->getResource('layout');
         $view = $layout->getView();
