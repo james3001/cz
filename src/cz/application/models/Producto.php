@@ -29,7 +29,7 @@ class Application_Model_Producto extends Zend_Db_Table {
     
     public function getPaginator(){
         $paginador = Zend_Paginator::factory($this->listar()->fetchAll());
-        $paginador->setItemCountPerPage(2);
+        $paginador->setItemCountPerPage(10);
         //$pag->setRowCount(500);
         return $paginador;
     }
