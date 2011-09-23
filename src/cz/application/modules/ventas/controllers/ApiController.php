@@ -50,10 +50,10 @@ class Ventas_ApiController extends App_Controller_Action {
         
         $srvParams = array(
             'jsonrpcs' => Zend_Json_Server::VERSION_2,
-            'method' => 'repite',
+            'method' => 'catalogo',
             'params' => array(
-                'texto' => $this->_getParam('nombre'),
-                'veces' => $this->_getParam('edad')
+             /*   'texto' => $this->_getParam('nombre'),
+                'veces' => $this->_getParam('edad')*/
             ),
             'id' => 'cliente_325432'
         );

@@ -43,7 +43,7 @@ class App_Server_Ventas {
      */
     public function catalogo(){
         $_producto = new Application_Model_Producto();
-        return $_producto->listarPorCategoria();
+        return $_producto->listar()->fetchAll();
     }
 
     /**
