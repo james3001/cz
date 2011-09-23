@@ -1,6 +1,6 @@
 <?php
 
-class Ventas_CategoriaController extends Zend_Controller_Action {
+class Ventas_CategoriaController extends App_Controller_Action {
 
     protected $_categoria;
 
@@ -11,6 +11,13 @@ class Ventas_CategoriaController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
+        $log = new Zend_Log();
+        
+        
+        
+        
+        
+        //$log = Zend_Registry::get('log');
         //$this->view->categorias = $this->_categoria->getCategorias();
         $paginator = $this->_categoria->getPaginator();
         $paginator->setCurrentPageNumber($this->_getParam('page', 1));
@@ -115,6 +122,15 @@ class Ventas_CategoriaController extends Zend_Controller_Action {
         $this->_helper->flashMessenger('Categoria Activada');
         $this->_redirect('/ventas/categoria');
     }
+    
+//    public function ejemploWSAction(){
+//        $server = new Zend_Json_Server();
+//        $server->setClass('App_Mi_Clase_Ws');
+//        
+//        /*
+//         * 
+//         */
+//    }
 
 }
 

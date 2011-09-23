@@ -24,6 +24,9 @@
                     <?php $link = $this->url(array('action'=>'ver','id'=>$id)) ?>
                     <a href="<?=$link?>">[Ver]</a>
 
+                    <?php $link = $this->url(array('action'=>'ver','id'=>$id)) ?>
+                    <a rel="<?=$id?>" class="verAjax" href="<?=$link?>">[Ver-Ajax]</a>
+
                     <?php $link = $this->url(array('action'=>'editar','id'=>$id)) ?>
                     <a href="<?=$link?>">[Editar]</a>
 
@@ -49,12 +52,33 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-<br />
-
-
 <div class="pagination all">
     <?=$this->paginationControl($this->productos, 'Sliding' ,'producto/_pag.phtml')?>
 </div>
 
+<div id="ver-producto" style="border: 1px red solid; width: 500px;">
+    
+</div>
+
 
 <a href="<?=$this->url(array('action'=>'nuevo','controller'=>'producto'),null,true)?>">Nuevo</a>
+
+
+<script type="text/javascript">
+    $('.verAjax').click(function(){
+        $.ajax(
+            {
+                'url' : '/producto/ver',
+                'data' : {
+                    'id' : $(this).attr('rel')
+                },
+                'success': function(response){
+                    $('#ver-producto').html(response);
+                },
+                'type' : 'get',
+                'dateType' : 'html'
+            }
+        );
+        return false;
+    });
+</script>

@@ -10,7 +10,7 @@
  *
  * @author Administradores1
  */
-class Ventas_ProductoController extends Zend_Controller_Action {
+class Ventas_ProductoController extends App_Controller_Action {
     
     protected $_producto;
 
@@ -23,7 +23,7 @@ class Ventas_ProductoController extends Zend_Controller_Action {
 
 
     public function indexAction(){
-        
+        $this->log->debug('Hola!!!');
         
         $form = new Application_Form_Producto();
         
@@ -68,8 +68,8 @@ class Ventas_ProductoController extends Zend_Controller_Action {
         $this->_helper->layout->disableLayout();
         $this->_helper->viewRenderer->setNoRender();
 
-
-        $producto = $this->_producto->getDetalle($this->_getParam('id'));
+        $id = $this->_getParam('id');
+        $producto = $this->_producto->getDetalle($id);
 //        var_dump($producto);exit;
 
         $pdf = new Zend_Pdf();
@@ -92,14 +92,17 @@ class Ventas_ProductoController extends Zend_Controller_Action {
         $pdfData = $pdf1->render();
 
 
-
-        header("Content-type: application/x-pdf");
-        header("Content-Disposition: inline; filename=result.pdf");
+        $this->_response->setHeader('Content-type', 'application/x-pdf');
+        $this->_response->setHeader('Content-Disposition', 'inline; filename=PRODUCTO_'.  str_pad($id, 6, '0', STR_PAD_LEFT).'.pdf');
+        
         $this->_response->appendBody($pdfData);
 
     }        
     
     public function verAction(){
+        if($this->_request->isXmlHttpRequest()){
+            $this->_helper->layout->disableLayout();
+        }
         $this->view->producto = $this->_producto->getDetalle($this->_getParam('id'));
     }
     
@@ -110,6 +113,7 @@ class Ventas_ProductoController extends Zend_Controller_Action {
         $id = $this->_request->getParam('id');
         $this->view->producto = $this->_producto->getDetalle($id);
         $html = $this->view->render('producto/ver.phtml');
+        
         
         require_once(APPLICATION_PATH . "/../library/Dompdf/dompdf_config.inc.php");
         

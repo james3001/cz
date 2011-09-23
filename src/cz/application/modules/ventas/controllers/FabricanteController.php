@@ -8,7 +8,7 @@
  * Description of CategoriaController
  *
  */
-class Ventas_FabricanteController extends Zend_Controller_Action {
+class Ventas_FabricanteController extends App_Controller_Action {
 
     protected $_fabricante;
     protected $URL;

@@ -1,6 +1,6 @@
 <?php
 
-class Ventas_HomeController extends Zend_Controller_Action
+class Ventas_HomeController extends App_Controller_Action
 {
 
     public function init()
@@ -9,6 +9,7 @@ class Ventas_HomeController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        
     }
 
     public function serviceAction()
