@@ -95,5 +95,30 @@ class Application_Model_Producto extends Zend_Db_Table {
 
     }
     
+    public function transaction(){
+        $db = $this->getAdapter();
+        $db->beginTransaction();
+        
+        try {
+            //$db->
+            //$db->
+            //$db->
+            //$db->
+            $db->commit();
+            
+        } catch (Exception $exc) {
+            $db->rollBack();
+            echo $exc->getTraceAsString();
+        }
+
+
+
+        /*
+         * 
+         * 
+         */
+        
+    }
+    
     
 }
