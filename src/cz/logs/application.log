@@ -87,3 +87,23 @@
 2011-09-23T01:48:25+00:00 DEBUG (7): Hola!!!
 2011-09-23T01:51:14+00:00 DEBUG (7): Hola!!!
 2011-09-23T01:51:26+00:00 DEBUG (7): Hola!!!
+2011-09-23T03:21:32+00:00 DEBUG (7): Hola!!!
+2011-09-23T03:24:18+00:00 DEBUG (7): Hola!!!
+2011-09-23T03:31:43+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"tarea","id":"nazart jara"}
+2011-09-23T03:31:45+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"tarea","id":"nazart jara"}
+2011-09-23T03:31:46+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"tarea","id":"nazart jara"}
+2011-09-23T03:31:48+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"tarea","id":"nazart jara"}
+2011-09-23T03:31:48+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"tarea","id":"nazart jara"}
+2011-09-23T03:31:49+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"tarea","id":"nazart jara"}
+2011-09-23T03:31:51+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"tarea","id":"nazart jara"}
+2011-09-23T03:31:58+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"tarea","id":"cliente_325432"}
+2011-09-23T03:37:40+00:00 DEBUG (7): REQUEST CLIENTE: 
+{"method":"catalogo","id":"cliente_mhm"}

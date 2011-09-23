@@ -12,6 +12,15 @@
 class App_Server_Ventas {
 
     /**
+     * Tarea
+     *
+     * @return string
+     */
+    public function tarea()
+    {
+        return "Ahora creen un servicio y que el compañero del costado lo consuma";
+    }
+    /**
      * Suma de 2 variables
      *
      * @param  int $x

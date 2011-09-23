@@ -43,14 +43,22 @@ class Ventas_ApiController extends App_Controller_Action {
             echo $server->getServiceMap();
             return;
         }
-        $server->handle();
+        $log = $this->getLog();
+        $request = $server->getRequest();
+        if($this->tienePermiso($request->id) ){
+            $server->handle();
+        }
+        
+        $log->debug("REQUEST CLIENTE: \n".$request->toJson());
     }
+    
+    public function tienePermiso($id){return true;}
     
     public function clientAction(){
         
         $srvParams = array(
             'jsonrpcs' => Zend_Json_Server::VERSION_2,
-            'method' => 'catalogo',
+            'method' => 'tarea',
             'params' => array(
              /*   'texto' => $this->_getParam('nombre'),
                 'veces' => $this->_getParam('edad')*/
@@ -69,6 +77,33 @@ class Ventas_ApiController extends App_Controller_Action {
         
         
     }
+    
+    
+    
+    public function clientMiguelAction(){
+        
+        $srvParams = array(
+            'jsonrpcs' => Zend_Json_Server::VERSION_2,
+            'method' => 'catalogoId',
+            'params' => array(
+                'id' => 4
+            ),
+            'id' => 'cliente_325432'
+        );
+        
+        $http = new Zend_Http_Client();
+        $http->setUri('http://cz.miguel/api/server');
+        $http->setMethod(Zend_Http_Client::POST);
+        $http->setRawData( Zend_Json::encode($srvParams) );
+        $response = $http->request();
+        $data = $response->getBody();
+        $plain_data = Zend_Json::decode($data);
+        var_dump($plain_data);
+        
+        
+    }
+    
+    
     
 }
 
