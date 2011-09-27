@@ -1,0 +1,51 @@
+<h2>Catalogo 3</h2>
+
+<form action="/index/catalogo3" method="post">
+    <select name="id">
+        <option value="0">--Fabricante--</option>
+        <? foreach($this->fabricantes as $Fabricante): ?>
+        <option <?=$Fabricante->getId()==$this->id?'selected':''?> value="<?=$Fabricante->getId()?>"><?=$Fabricante->getName()?></option>
+        <? endforeach; ?>
+    </select>
+    <input type="submit" value="Buscar" />
+</form>
+
+
+<? if($this->id): ?>
+<hr />
+<h4>ID: <?=$this->id?></h4>
+<h4>Fabricante: <?=$this->fabricante->getName()?></h4>
+<hr />
+
+
+<h3>Productos con ID >25 </h3>
+<? foreach ($this->Productos25 as $Producto): ?>
+        <div class="prod"><?=$Producto->getName()?></div>
+<? endforeach; ?>
+<div style="clear: both"></div><hr>
+
+
+
+<h3>Productos con ID >25 (Array) </h3>
+<?if( array_key_exists(0,$this->Productos25Array) ):?>
+    <? foreach ($this->Productos25Array as $Producto): ?>
+        <div class="prod"><?=$Producto['name']?></div>
+    <? endforeach; ?>
+<?endif;?>
+<div style="clear: both"></div><hr>
+
+
+
+<pre>
+    <?if( array_key_exists(0,$this->Productos25Array) ):?>
+        <?=print_r($this->Productos25Array,true);?>
+    <?endif;?>
+</pre>
+
+<? endif; ?>
+
+
+
+<style type="text/css">
+    .prod{border: 1px navy dashed; width: 100px; height: 100px; float: left; margin: 10px; padding: 10px;}
+</style>

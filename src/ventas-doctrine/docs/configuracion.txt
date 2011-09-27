@@ -1,0 +1,8 @@
+php.ini
+
+C:\wamp\bin\apache\Apache2.2.17\bin\php.ini
+C:\wamp\bin\php\php5.3.5\php.ini
+
+include_path = ".;C:\wamp\apps\ZendFramework-1.11.3\library;C:\wamp\apps\Doctrine-2.0.0\library"
+
+==========

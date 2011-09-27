@@ -1,0 +1,48 @@
+doctrine test:
+
+<h2>Categorias</h2>
+<? // var_dump($this->categorias); ?>
+<ul>
+    <? foreach($this->categorias as $Categoria): ?>
+        <li><?=$Categoria->getName()?>
+            <ul>
+                <? foreach ($Categoria->getFabricantes() as $Fabricante): ?>
+                    <li>
+                        <?=$Fabricante->getName()?>
+                        <ul>
+                            <? foreach ($Fabricante->getProductos() as $Producto): ?>
+                                <li><?=$Producto->getName()?></li>
+                            <? endforeach; ?>
+                        </ul>
+                        
+                    </li>
+                <? endforeach; ?>
+            </ul>
+        </li>
+    <? endforeach; ?>
+</ul>
+
+<hr />
+
+
+
+<h2>Fabricantes</h2>
+<? // var_dump($this->fabricantes); ?>
+<ul>
+    <? foreach($this->fabricantes as $Fabricante): ?>
+        <li><?=$Fabricante->getName()?> (<?=$Fabricante->getCategoria()->getName()?>)</li>
+    <? endforeach; ?>
+</ul>
+
+<hr />
+
+
+
+
+<h2>Productos</h2>
+<? // var_dump($this->productos); ?>
+<ul>
+    <? foreach($this->productos as $Producto): ?>
+        <li><?=$Producto->getName()?> (<?=$Producto->getFabricante()->getName()?>)[<?=$Producto->getFabricante()->getCategoria()->getName()?>]</li>
+    <? endforeach; ?>
+</ul>

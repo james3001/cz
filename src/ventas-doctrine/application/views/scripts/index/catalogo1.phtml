@@ -1,0 +1,34 @@
+<h2>Catalogo 1</h2>
+
+<form action="/index/catalogo1" method="post">
+    <select name="id">
+        <option value="0">--Fabricante--</option>
+        <? foreach($this->fabricantes as $Fabricante): ?>
+        <option <?=$Fabricante->getId()==$this->id?'selected':''?> value="<?=$Fabricante->getId()?>"><?=$Fabricante->getName()?></option>
+        <? endforeach; ?>
+    </select>
+    <input type="submit" value="Buscar" />
+</form>
+
+
+<? if($this->id): ?>
+<hr />
+<h4>ID: <?=$this->id?></h4>
+<h4>Fabricante: <?=$this->fabricante->getName()?></h4>
+<hr />
+
+
+<h3>Todos los productos del fabricante seleccionado</h3>
+<? foreach ($this->fabricante->getProductos() as $Producto): ?>
+    <div class="prod"><?=$Producto->getName()?></div>
+<? endforeach; ?>
+<div style="clear: both"></div><hr>
+
+
+<? endif; ?>
+
+
+
+<style type="text/css">
+    .prod{border: 1px navy dashed; width: 100px; height: 100px; float: left; margin: 10px; padding: 10px;}
+</style>

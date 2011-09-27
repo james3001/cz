@@ -1,0 +1,82 @@
+<h2>Catalogo 2</h2>
+
+<form action="/index/catalogo2" method="post">
+    <select name="id">
+        <option value="0">--Fabricante--</option>
+        <? foreach($this->fabricantes as $Fabricante): ?>
+        <option <?=$Fabricante->getId()==$this->id?'selected':''?> value="<?=$Fabricante->getId()?>"><?=$Fabricante->getName()?></option>
+        <? endforeach; ?>
+    </select>
+    <input type="submit" value="Buscar" />
+</form>
+
+
+<? if($this->id): ?>
+<hr />
+<h4>ID: <?=$this->id?></h4>
+<h4>Fabricante: <?=$this->fabricante->getName()?></h4>
+<hr />
+
+<h3>Productos con ID >25 </h3>
+<? foreach ($this->FabricantesDeProductos25 as $Fabricante): ?>
+    <? foreach ($Fabricante->getProductos() as $Producto): ?>
+        <div class="prod"><?=$Producto->getName()?></div>
+    <? endforeach; ?>
+<? endforeach; ?>
+<div style="clear: both"></div><hr>
+
+
+
+<h3>Productos con ID >25 (Array) </h3>
+<?if( array_key_exists(0,$this->FabricantesDeProductos25Array) ):?>
+    <? foreach ($this->FabricantesDeProductos25Array[0]['Productos'] as $Producto): ?>
+        <div class="prod"><?=$Producto['name']?></div>
+    <? endforeach; ?>
+<?endif;?>
+<div style="clear: both"></div><hr>
+
+
+
+<pre>
+    <?if( array_key_exists(0,$this->FabricantesDeProductos25Array) ):?>
+        <?=print_r($this->FabricantesDeProductos25Array,true);?>
+    <?endif;?>
+</pre>
+
+<? endif; ?>
+
+
+
+<style type="text/css">
+    .prod{border: 1px navy dashed; width: 100px; height: 100px; float: left; margin: 10px; padding: 10px;}
+
+
+a:visited{
+        
+}
+
+span:hover{
+    
+}
+
+</style>
+
+<div id="all" class="fondo derecha resaltado">
+    curso desarrollo web
+</div>
+
+<script type="text/javascript">
+    $(function(){
+
+        $('div.derecha.resaltado').hide();
+
+        $('div.derecha .resaltado').hide();
+        
+        $('div .derecha div').hide();
+
+        $('img[src="fix.png"]');
+        $("div:contains('web)");
+
+
+    });
+</script>
